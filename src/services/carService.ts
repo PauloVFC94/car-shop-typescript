@@ -1,7 +1,7 @@
 import { IService } from '../interfaces/IService';
 import { ICar, CarSchema } from '../interfaces/ICar';
 import { IModel } from '../interfaces/IModel';
-//import { ErrorTypes } from '../errors/typeErrors';
+// import { ErrorTypes } from '../errors/typeErrors';
 
 class Car implements IService<ICar> {
   private _car:IModel<ICar>;
@@ -13,11 +13,10 @@ class Car implements IService<ICar> {
     const parsed = CarSchema.safeParse(obj);
 
     if (!parsed.success) {
-        throw parsed.error;
+      throw parsed.error;
     }
 
     return this._car.create(parsed.data);
-
   }
 }
 

@@ -5,7 +5,7 @@ import { ICar } from '../interfaces/ICar';
 export default class Car {
   constructor(private _service: IService<ICar>) { }
 
-  public async create (
+  public async create(
     req: Request,
     res: Response<ICar>,
   ) {
