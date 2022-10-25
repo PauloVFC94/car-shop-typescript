@@ -22,4 +22,13 @@ export default class Car {
     const result = await this._service.read();
     return res.status(200).json(result);
   }
+
+  public async readOne(
+    req: Request,
+    res: Response<ICar>,
+  ) {
+    const carId = req.params.id;
+    const result = await this._service.readOne(carId);
+    return res.status(200).json(result);
+  }
 }
