@@ -42,4 +42,13 @@ export default class Car {
     const result = await this._service.update(carId, car);
     return res.status(200).json(result);
   }
+
+  public async delete(
+    req: Request,
+    res: Response<ICar>,
+  ) {
+    const carId = req.params.id;
+    const result = await this._service.delete(carId);
+    return res.status(204).json(result);
+  }
 }
