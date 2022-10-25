@@ -6,7 +6,8 @@ import { carMock,
   carMockWithId,
   carMockUpdate,
   carMockWithIdUpdate } from '../../mocks/carMocks';
-import { ErrorTypes } from '../../../errors/typeErrors';
+// import { ErrorTypes } from '../../../errors/typeErrors';
+
 const { expect } = chai;
 
 describe('Camada Model de Car', () => {
