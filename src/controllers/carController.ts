@@ -31,4 +31,15 @@ export default class Car {
     const result = await this._service.readOne(carId);
     return res.status(200).json(result);
   }
+
+  public async update(
+    req: Request,
+    res: Response<ICar>,
+  ) {
+    const carId = req.params.id;
+    const { model, year, color, buyValue, doorsQty, seatsQty } = req.body;
+    const car = { model, year, color, buyValue, doorsQty, seatsQty };
+    const result = await this._service.update(carId, car);
+    return res.status(200).json(result);
+  }
 }
